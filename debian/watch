@@ -1,0 +1,3 @@
+version=4
+opts=filenamemangle=s/.*\/archive\/(\d\S+)\/belr.*\.tar\.gz/belr-$1\.tar\.gz/g \
+  https://gitlab.linphone.org/BC/public/belr/tags?sort=updated_desc .*/archive/([\d\.]+)/.*\.tar\.gz.*

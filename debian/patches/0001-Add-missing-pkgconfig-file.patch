@@ -1,0 +1,20 @@
+From: "Dr. Tobias Quathamer" <toddy@debian.org>
+Date: Wed, 8 Nov 2017 18:17:15 +0100
+Subject: Add missing pkgconfig file
+
+---
+ CMakeLists.txt | 3 +++
+ 1 file changed, 3 insertions(+)
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -152,6 +152,9 @@
+ 	DESTINATION ${ConfigPackageLocation}
+ )
+ 
++configure_file(${CMAKE_CURRENT_SOURCE_DIR}/belr.pc.in ${CMAKE_CURRENT_BINARY_DIR}/belr.pc)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/belr.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
++
+ if (ENABLE_PACKAGE_SOURCE)
+ 	add_subdirectory(build)
+ endif()
